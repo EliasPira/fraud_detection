@@ -1,7 +1,7 @@
 FROM python:3.11-slim-bookworm@sha256:8404ed8464ae7275b5c13a00c6edd2e027c6560a1f74bd4c7dee39f5d00f9352
 WORKDIR /mlflow
 
-RUN pip install --no-cache-dir mlflow==2.14.3
+RUN pip install --no-cache-dir mlflow==2.14.3 "sqlalchemy<2.0.36"
 
 EXPOSE 5000
 CMD ["mlflow", "server", \
